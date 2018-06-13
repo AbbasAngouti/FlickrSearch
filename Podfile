@@ -6,5 +6,5 @@ target 'FlickrSearchDemo' do
   use_frameworks!
 
   # Pods for FlickrSearchDemo
-pod 'ReachabilitySwift', '~> 3'
+  pod 'ReachabilitySwift', '~> 3'
 end
