@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,6 +43,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="activityIndicator" destination="TLt-kc-LKv" id="B7Z-XN-oLq"/>
+                                    <segue destination="4Xv-gq-fpJ" kind="show" id="CMc-3q-8Ve"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoadMoreCell" id="s1Q-om-kbn">
@@ -63,6 +65,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjU-yx-fGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1861.5999999999999" y="-361.16941529235385"/>
+        </scene>
+        <!--Full Screen Image View Controller-->
+        <scene sceneID="OX5-ke-wFR">
+            <objects>
+                <viewController id="4Xv-gq-fpJ" customClass="FullScreenImageViewController" customModule="FlickrSearchDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sYf-2y-qpo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-o6-88d" userLabel="imageView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="558"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-xy-Mgh">
+                                <rect key="frame" x="15" y="642" width="345" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HxA-xy-Mgh" firstAttribute="top" secondItem="VuX-o6-88d" secondAttribute="bottom" constant="20" id="1W9-dZ-URM"/>
+                            <constraint firstItem="HxA-xy-Mgh" firstAttribute="centerX" secondItem="sYf-2y-qpo" secondAttribute="centerX" id="6dB-Me-UwB"/>
+                            <constraint firstItem="HxA-xy-Mgh" firstAttribute="leading" secondItem="bIm-jn-eXT" secondAttribute="leading" constant="15" id="8Sg-1c-Axe"/>
+                            <constraint firstItem="VuX-o6-88d" firstAttribute="leading" secondItem="bIm-jn-eXT" secondAttribute="leading" id="Jzr-9y-gPs"/>
+                            <constraint firstItem="bIm-jn-eXT" firstAttribute="bottom" secondItem="HxA-xy-Mgh" secondAttribute="bottom" constant="25" id="ZUu-YK-3NO"/>
+                            <constraint firstItem="bIm-jn-eXT" firstAttribute="trailing" secondItem="HxA-xy-Mgh" secondAttribute="trailing" constant="15" id="o38-jn-iHy"/>
+                            <constraint firstItem="bIm-jn-eXT" firstAttribute="trailing" secondItem="VuX-o6-88d" secondAttribute="trailing" id="qHT-Cb-klf"/>
+                            <constraint firstItem="VuX-o6-88d" firstAttribute="top" secondItem="bIm-jn-eXT" secondAttribute="top" id="ug5-jP-eyH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bIm-jn-eXT"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageTitleLabel" destination="HxA-xy-Mgh" id="QNM-tv-V9h"/>
+                        <outlet property="imageView" destination="VuX-o6-88d" id="94R-c8-fvf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaF-Tq-IXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669.5999999999999" y="-367.46626686656674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Kh-VM-nFE">

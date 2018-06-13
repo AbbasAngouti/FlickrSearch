@@ -30,8 +30,7 @@ class MainViewController: UICollectionViewController {
             }
         }
     }
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -253,6 +252,16 @@ extension MainViewController {
 }
 
 
+extension MainViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let fsivc = segue.destination as? FullScreenImageViewController {
+            if let idx = collectionView?.indexPathsForSelectedItems?[0] {
+                let tappedPhoto = fetchedPhotos[idx.row]
+                fsivc.imageTitle = tappedPhoto.title
+            }
+        }
+    }
+}
 
 
 // to monitor internet reachability
